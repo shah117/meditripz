@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0 Transitional//EN">
+<html>
+
+<head>
+
+<style>
+#header{
+	position: fixed;
+	background-color: #003D1F;
+	width: 100%;
+	
+	left: 0;
+	top: 0;
+}
+
+
+
+.logoClass-top{
+	width:80px;
+	height:80px;
+
+}
+.logoClass-bottom{
+	width:40px;
+	height:40px;
+
+}
+
+.facebook-top {
+	width:30px;
+	height:30px;
+	padding: 40px 0px 0px 0px;
+
+}
+
+.signin-top {
+	width:50px;
+	height:30px;
+	padding: 40px 0px 0px 0px;
+}
+
+.facebook-bottom {
+	width:15px;
+	height:15px;
+	padding: 15px 0px 0px 0px;
+
+}
+
+.signin-bottom {
+	width:25px;
+	height:15px;
+	padding: 15px 0px 0px 0px;
+}
+
+
+.singleHospital{
+	width: 200px;
+	height: 200px;
+	margin: 10px 10px 10px 10px;
+}
+
+#signs{
+	float: right;
+
+}
+
+#slide-1 .bcg{
+	background-image: url("images/dilli.jpg");
+	margin: 90px 0 0 0;
+	height: 600px;
+}
+
+#slide-2 .bcg{
+	background-image: url("images/dilli2.jpg");
+	height: 600px;
+}
+
+.bcg {
+	background-position: center center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.past-main{
+	position: fixed;
+	background-color: yellow;
+	width: 100%;
+	
+	left: 0;
+	top: 0;
+}
+
+.user_enter{
+	border: 1px solid white;
+
+}
+
+.datalist {
+	list-style: none;
+	display: none;
+	background: white;
+	box-shadow: 0 2px 2px #999;
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-height: 300px;
+	overflow-y: auto;
+}
+.datalist:empty {
+	display: none !important;
+}
+.datalist li {
+	padding: 3px;
+	font: 13px "Lucida Grande", Sans-Serif;
+}
+.datalist li.active {
+	background: #3875d7;
+	color: white;
+}
+#cityEnter{
+	border: 2px solid white;
+	border-radius: 10px;
+	width: 50%;
+	height: 30px;
+	font-size: 20px;
+	color: #B2B2B2;
+	background-color: transparent;
+	margin: 5px auto 5px 250px; 
+}
+#problemEnter{
+	position: relative;
+	border: 2px solid white;
+	border-radius: 10px;
+	width: 50%;
+	height: 30px;
+	font-size: 20px;
+	color: #B2B2B2;
+	background-color: transparent;
+	margin: 5px auto 5px 250px; 
+}
+#city{
+	font-size: 20px;
+	color: #B2B2B2;
+	background-color: transparent;
+}
+
+.city{
+	font-size: 20px;
+	color: #B2B2B2;
+	background-color: transparent;
+}
+
+.prob{
+	font-size: 20px;
+	color: #B2B2B2;
+	background-color: transparent;
+}
+
+#centerDIV{
+	position: relative;
+	top: 50px;
+	width: auto;
+	background: rgba(34,34,34,0.8);
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 900px;
+	
+}
+
+#hospitalTable{
+	align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#selected{
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: "Lucida Grande";
+}
+
+</style>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+</script>
+
+</head>
+
+
+<body>
+	
+	<section id = "header">
+		<div
+        data-start=""
+        data-anchor-target="#slide-1">
+		<img id = "logoClass" class = "logoClass-top" src="images/logo.jpg" >
+			<div id = "signs">
+				<img id = "facebook" class = "facebook-top" src="images/facebook.jpg">
+				<img id = "signin" class = "signin-top" src="images/signin.jpg">
+			</div>
+
+		</div>
+	</section>
+	
+
+	<section id = "slide-1">
+		<div class = "bcg"
+		data-200-center="background-position: 50% 0px;"
+        data-top-bottom="background-position: 50% -100px;"
+        data-anchor-target="#slide-1">
+
+        	
+        	<div id = "centerDIV"
+        	data-start="opacity: 1"
+        	data-100-start="opacity: 0"
+            data-anchor-target="#slide-1">
+
+        	<p><input type="text" id="cityEnter" list="cities" placeholder="Enter City" onchange = "updatecities()"></p>
+
+			<datalist id="cities">
+				<option class="city" value="Delhi (NCR)">
+			  	<option class="city" value="Mumbai">
+			  	<option class="city" value="Pune">
+			  	<option class="city" value="Bangalore">
+
+			</datalist>
+
+			<p><input type="text" id="problemEnter" list="problems" placeholder="What problem do you have?" onchange = "updateproblem()"></p>
+
+			<datalist id="problems">
+				<option class="prob" value="Heart">
+			  	<option class="prob" value="Lung">
+			  	<option class="prob" value="ENT">
+			  	<option class="prob" value="Body">
+
+			</datalist>
+
+			<p id = "selected"></p>
+			
+			<table id = "hospitalTable">
+				<tr id = "hospitalRow">
+
+
+				</tr>
+
+			</table>
+
+			</div>
+		</div>
+
+
+	</section>
+
+	<section  id = "slide-2">
+		<div class = "bcg"
+		data-200-center="background-position: 50% 0px;"
+        data-top-bottom="background-position: 50% -100px;"
+        data-anchor-target="#slide-1">
+
+        <a name = "hotels">
+        	<h1 style = "color:white;">Jhingaa lala hu!!
+        </a>
+
+	</section>
+
+	
+	
+	<script type="text/javascript" src = "js/updatecity.js"></script>
+	<script type="text/javascript" src="http://prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
+    <script type="text/javascript">
+    var s = skrollr.init();
+    </script>
+
+    <script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/modernizr.custom.95508.js"></script>
+	<script>
+		// Safari reports success of list attribute, so doing ghetto detection instead
+		yepnope({
+		  test : (!Modernizr.input.list || (parseInt($.browser.version) > 400)),
+		  yep : [
+		      'js/jquery.relevant-dropdown.js',
+					'js/load-fallbacks.js'
+		  ]
+		});
+	</script>
+
+
+</body>
+
+
+</html>
